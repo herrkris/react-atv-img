@@ -4,10 +4,11 @@ import styles from '../styles';
 
 export default class AtvImg extends Component {
   static propTypes = {
+    children: React.PropTypes.element.isRequired,
     isStatic: PropTypes.bool,
     staticFallback: PropTypes.string,
     className: PropTypes.string,
-    style: PropTypes.object
+    style: PropTypes.object,
   };
 
   state = {
@@ -16,7 +17,7 @@ export default class AtvImg extends Component {
     isOnHover: false,
     container: {},
     shine: {},
-    layers: []
+    layers: [],
   };
 
   componentDidMount() {
