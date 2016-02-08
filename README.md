@@ -33,7 +33,6 @@ static propTypes = {
 ```
 
 #### Data
-- `layers`: Required. An array of image URLs. The images will be stacked on top of each other and the _last_ element will be at the top.
 - `isStatic`: Optional. A boolean value. When it evaluates to `true`, it disables the parallax effect, and shows the flattened image (`staticFallback`) instead.
 - `staticFallback`: Optional. A flattened image that contains all the layers.
 
