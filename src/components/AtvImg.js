@@ -4,11 +4,10 @@ import styles from '../styles';
 
 export default class AtvImg extends Component {
   static propTypes = {
-    layers: PropTypes.arrayOf(PropTypes.string).isRequired,
     isStatic: PropTypes.bool,
     staticFallback: PropTypes.string,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.object
   };
 
   state = {
@@ -17,7 +16,7 @@ export default class AtvImg extends Component {
     isOnHover: false,
     container: {},
     shine: {},
-    layers: [],
+    layers: []
   };
 
   componentDidMount() {
@@ -31,7 +30,7 @@ export default class AtvImg extends Component {
   }
 
   handleMove = ({ pageX, pageY }) => {
-    const layerCount = this.props.layers.length; // the number of layers
+    const layerCount = this.props.children.length; // the number of layers
 
     const { rootElemWidth, rootElemHeight } = this.state;
 
@@ -58,7 +57,7 @@ export default class AtvImg extends Component {
         background: `linear-gradient(${angle}deg, rgba(255, 255, 255, ${(pageY - offsets.top - bodyScrollTop) / rootElemHeight * 0.4}) 0%, rgba(255, 255, 255, 0) 80%)`,
         transform: `translateX(${(offsetX * layerCount) - 0.1}px) translateY(${(offsetY * layerCount) - 0.1}px)`,
       },
-      layers: this.props.layers.map((_, idx) => ({
+      layers: this.props.children.map((_, idx) => ({
         transform: `translateX(${(offsetX * (layerCount - idx)) * ((idx * 2.5) / wMultiple)}px) translateY(${offsetY * layerCount * ((idx * 2.5) / wMultiple)}px)`,
       })),
     });
@@ -89,15 +88,16 @@ export default class AtvImg extends Component {
 
   renderLayers = () => (
     <div style={styles.layers}>
-      {this.props.layers && this.props.layers.map((imgSrc, idx) => (
+      {this.props.children && this.props.children.map((element, idx) => (
         <div
           style={{
-            backgroundImage: `url(${imgSrc})`,
             ...styles.renderedLayer,
             ...(this.state.layers[idx] ? this.state.layers[idx] : {}),
           }}
           key={idx}
-        />
+        >
+          {element}
+        </div>
       ))}
     </div>
   );

@@ -18,13 +18,12 @@ const rootDivStyle = {
 render(
   <div style={rootDivStyle}>
     <AtvImg
-      layers={[
-        'http://kloc.pm/images/back.png',
-        'http://kloc.pm/images/front.png',
-      ]}
       staticFallback="http://kloc.pm/images/kloc-icon-flattened.jpg"
       style={{ width: 320, height: 190 }}
-    />
+    >
+      <img style={{ maxWidth: '100%' }} src="http://kloc.pm/images/back.png" />
+      <img style={{ maxWidth: '100%' }} src="http://kloc.pm/images/front.png" />
+    </AtvImg>
   </div>,
   document.getElementById('root')
 );
