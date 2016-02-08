@@ -15,7 +15,7 @@ Or run it locally:
 git clone https://github.com/keyanzhang/react-atv-img/
 cd react-atv-img
 npm install
-npm run example
+npm run examplex
 ```
 
 Then navigate to [http://localhost:3000/](http://localhost:3000/)
@@ -43,7 +43,7 @@ static propTypes = {
 ### Example
 
 ``` javascript
-import AtvImg from 'react-atv-img';
+import AtvImg from 'react-atv';
 
 <AtvImg
   staticFallback="http://kloc.pm/images/kloc-icon-flattened.jpg"
