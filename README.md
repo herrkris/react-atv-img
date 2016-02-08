@@ -25,7 +25,6 @@ Then navigate to [http://localhost:3000/](http://localhost:3000/)
 
 ``` javascript
 static propTypes = {
-  layers: PropTypes.arrayOf(PropTypes.string).isRequired,
   isStatic: PropTypes.bool,
   staticFallback: PropTypes.string,
   className: PropTypes.string,
@@ -48,15 +47,14 @@ static propTypes = {
 import AtvImg from 'react-atv-img';
 
 <AtvImg
-  layers={[
-    'http://kloc.pm/images/back.png',
-    'http://kloc.pm/images/front.png',
-  ]}
   staticFallback="http://kloc.pm/images/kloc-icon-flattened.jpg"
   isStatic={false}
   className={'thisIsOptional'}
   style={{ width: 320, height: 190 }}
-/>
+>
+  <img style={{ maxWidth: '100%' }} src="http://kloc.pm/images/back.png" />
+  <img style={{ maxWidth: '100%' }} src="http://kloc.pm/images/front.png" />
+</AtvImg>
 ```
 
 ## License
