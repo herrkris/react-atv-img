@@ -17,6 +17,13 @@ const styles = {
     transition: 'all 0.2s ease-out',
   },
 
+  children: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    overflow: 'hidden',
+  },
+
   shadowOnHover: {
     top: '5%',
     left: '5%',

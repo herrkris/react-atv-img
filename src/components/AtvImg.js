@@ -79,7 +79,7 @@ export default class AtvImg extends Component {
       isOnHover: false,
       container: {},
       shine: {},
-      layers: [],
+      children: [],
     });
   }
 
@@ -88,12 +88,12 @@ export default class AtvImg extends Component {
   );
 
   renderLayers = () => (
-    <div style={styles.layers}>
+    <div style={styles.children}>
       {this.props.children && this.props.children.map((element, idx) => (
         <div
           style={{
             ...styles.renderedLayer,
-            ...(this.state.layers[idx] ? this.state.layers[idx] : {}),
+            ...(this.state.children[idx] ? this.state.children[idx] : {}),
           }}
           key={idx}
         >
