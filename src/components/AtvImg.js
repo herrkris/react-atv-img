@@ -4,7 +4,7 @@ import styles from '../styles';
 
 export default class AtvImg extends Component {
   static propTypes = {
-    children: React.PropTypes.element.isRequired,
+    children: PropTypes.node.isRequired,
     isStatic: PropTypes.bool,
     staticFallback: PropTypes.string,
     className: PropTypes.string,
