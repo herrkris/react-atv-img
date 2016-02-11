@@ -58,7 +58,7 @@ export default class AtvImg extends Component {
         background: `linear-gradient(${angle}deg, rgba(255, 255, 255, ${(pageY - offsets.top - bodyScrollTop) / rootElemHeight * 0.4}) 0%, rgba(255, 255, 255, 0) 80%)`,
       },
       children: this.props.children.map((_, idx) => {
-        if (_.props.className.match(/atv-fixed/)) {
+        if (!_.props.className.match(/atv-fixed/)) {
           return {
             transform: `translateX(${(offsetX * (childrenCount - idx)) * ((idx * 2.5) / wMultiple)}px) translateY(${offsetY * childrenCount * ((idx * 2.5) / wMultiple)}px)`,
           };
